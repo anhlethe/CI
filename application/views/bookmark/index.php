@@ -23,6 +23,7 @@
     	       <td class="actions">
                     <p><a href="<?php echo site_url('bookmarks/'.$bookmarks['id']); ?>">View article</a></p>
                 </td>
+                <td><?php var_dump(site_url('bookmarks/'.$bookmarks['id'])); ?></td>
 
         <?php endforeach; ?>
     </tbody>

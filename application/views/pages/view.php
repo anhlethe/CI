@@ -1,3 +1,3 @@
 <?php
-echo '<h2>'.$userinfo['email'].'</h2>';
-echo $userinfo['id'];
+echo '<h2>'.$bookmark['email'].'</h2>';
+echo $bookmark['id'];

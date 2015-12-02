@@ -14,7 +14,7 @@ class New_model extends CI_Model {
 		{
 		        if ($slug === FALSE)
 		        {
-		                $query = $this->db->get('bookmarks');
+		                $query = $this->db->get('news');
 		                return $query->result_array();
 		        }
 

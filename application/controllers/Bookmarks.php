@@ -19,9 +19,9 @@ class Bookmarks extends CI_Controller {
                 $this->load->view('templates/footer');
         }
 
-        public function view($slug = NULL)
+        public function view($id = NULL)
         {
-                $data['news_item'] = $this->news_model->get_news($slug);
+                $data['bookmark'] = $this->Bookmarks_model->get_bookmarks($id);
 
                 if (empty($data['news_item']))
                 {
@@ -30,7 +30,7 @@ class Bookmarks extends CI_Controller {
                 $data['title'] = $data['news_itdem']['title'];
 
                 $this->load->view('templates/header', $data);
-                $this->load->view('news/view', $data);
+                $this->load->view('bookmark/view', $data);
                 $this->load->view('templates/footer');
         }
         public function create()

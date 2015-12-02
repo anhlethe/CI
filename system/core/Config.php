@@ -95,7 +95,7 @@ class CI_Config {
 			}
 			else
 			{
-				$base_url = 'http://localhost/';
+				$base_url = 'http://localhost/';echo "4353535";
 			}
 
 			$this->set_item('base_url', $base_url);
@@ -213,7 +213,6 @@ class CI_Config {
 		{
 			return '';
 		}
-
 		return rtrim($this->config[$item], '/').'/';
 	}
 
