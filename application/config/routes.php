@@ -57,4 +57,3 @@ $route['bookmarks'] = 'bookmarks';
 $route['(:any)'] = 'pages/view/$1';
 $route['default_controller'] = 'pages/view';
 
-

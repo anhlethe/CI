@@ -84,13 +84,13 @@ class CI_Config {
 	public function __construct()
 	{
 		$this->config =& get_config();
-
+		$url_server='localhost';
 		// Set the base_url automatically if none was provided
 		if (empty($this->config['base_url']))
 		{
 			if (isset($_SERVER['SERVER_ADDR']))
 			{
-				$base_url = (is_https() ? 'https' : 'http').'://'.$_SERVER['SERVER_ADDR']
+				$base_url = (is_https() ? 'https' : 'http').'://'.$url_server
 					.substr($_SERVER['SCRIPT_NAME'], 0, strpos($_SERVER['SCRIPT_NAME'], basename($_SERVER['SCRIPT_FILENAME'])));
 			}
 			else

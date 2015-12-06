@@ -6,22 +6,23 @@ class Bookmarks_model extends CI_Model {
         {
                 $this->load->database();
         }
-        public function get_bookmarks($slug = FALSE)
+        public function get_bookmarks($id = FALSE)
 		{
-		        if ($slug === FALSE)
+		        if ($id === FALSE)
 		        {
 		                $query = $this->db->get('bookmarks'); 
 		                return $query->result_array();
 		        }
-
-		        $query = $this->db->get_where('bookmarks', array('slug' => $slug));
+		       
+		        $query = $this->db->get_where('bookmarks', array('id' => $id));
+		        //var_dump($query->row_array());exit;
 		        return $query->row_array();
 		}
 		public function set_bookmarks()
 		{
 		    $this->load->helper('url');
 
-		    $slug = url_title($this->input->post('title'), 'dash', TRUE);var_dump($slug);exit;
+		    $slug = url_title($this->input->post('title'), 'dash', TRUE);
 
 		    $data = array(
 		        'title' => $this->input->post('title'),

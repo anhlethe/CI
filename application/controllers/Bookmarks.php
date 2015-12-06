@@ -9,28 +9,28 @@ class Bookmarks extends CI_Controller {
         }
 
         public function index()
-        {
+        {       
                 $data['bookmark'] = $this->Bookmarks_model->get_bookmarks();
                 $data['title'] = 'News archive';
                 $arrayName = array( );
                 $arrayName = $data['bookmark'];
                 $this->load->view('templates/header', $data);
-                $this->load->view('bookmark/index', $data);
+                $this->load->view('bookmarks/index', $data);
                 $this->load->view('templates/footer');
         }
 
-        public function view($slug = NULL)
-        {
-                $data['news_item'] = $this->news_model->get_news($slug);
-
-                if (empty($data['news_item']))
+        public function view($id=null)
+        {       
+                $data['bookmark'] = $this->Bookmarks_model->get_bookmarks($id);
+               
+                if (empty($data['bookmark']))
                 {
                         show_404();
                 }
-                $data['title'] = $data['news_itdem']['title'];
+                $data['title'] = $data['bookmark']['title'];
 
                 $this->load->view('templates/header', $data);
-                $this->load->view('news/view', $data);
+                $this->load->view('bookmarks/view',$data);
                 $this->load->view('templates/footer');
         }
         public function create()

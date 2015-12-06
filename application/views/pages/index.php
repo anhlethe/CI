@@ -13,8 +13,7 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         
-        <li><a href="<?php echo site_url('pages/view/'. $name['user_id']); ?>">List user</a></li>
-        <li><a href="<?php echo site_url('pages/view/'. $name['user_id']); ?>">List Tag</a></li>
+       
     </ul>
 </nav>
 <div class="bookmarks index large-9 medium-8 columns content">
