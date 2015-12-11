@@ -2,13 +2,16 @@
 
 class Users_model extends CI_Model {
 
-        public function __construct()
+          public function __construct()
         {
                 $this->load->database();
         }
-        public function get_users()
-		{
-		      
-                $query = $this->db->get('users'); 
-                return $query->result_array();    
-		}
+        public function get_users($user,$pass)
+                {
+                    
+                       
+                        $query = $this->db->get_where('bookmarks', array('user' => $user,'pass'=>$pass));
+                        var_dump($query->row_array());exit;
+                        return $query->row_array();
+                }
+}
